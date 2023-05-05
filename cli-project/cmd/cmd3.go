@@ -33,4 +33,5 @@ func init() {
 	// cmd3Cmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	cmd3Cmd.Flags().BoolP("lcmd", "l", false, "This does a boolean thing - notice I can reuse")
 	cmd3Cmd.Flags().StringP("ocmd", "o", "my-o-command3", "This does a string thing - notice i can reuse")
+	cmd3Cmd.Flags().Int32P("port", "p", 8080, "sets the port number")
 }

@@ -21,6 +21,7 @@ import ThirdPage from './pages/ThirdPage.vue'
   </header>
 
   <RouterView />
+
 </template>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-        <p> This is the <span class="page-text">SECOND</span> page</p>
+        <p> This is the <span class="emphasis-text">SECOND</span> page</p>
   </template>
     
     <script lang="ts">
@@ -14,7 +14,7 @@
     
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.page-text{
+.emphasis-text{
     color:red
 }
 

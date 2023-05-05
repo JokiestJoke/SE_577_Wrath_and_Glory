@@ -20,7 +20,7 @@
           :options="options"
         />
 
-        <div>v 0.1</div>
+        <div>v 0.1.1</div>
       </q-toolbar>
     </q-header>
 
@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 import EssentialLink from 'components/EssentialLink.vue';
 
 const router = useRouter();
