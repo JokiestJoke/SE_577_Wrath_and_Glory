@@ -16,6 +16,25 @@
     </p>
   </div>
 
+  <div>
+    <div v-if="studentData.length > 0">
+      <table>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Course</th>
+        </tr>
+        <tr v-for = "(student, rowNum) in studentData">
+          <td>{{ student.studentId }}</td>
+          <td>{{ student.studentName }}</td>
+          <td>{{ student.courseId }}</td>
+        </tr>
+      </table>
+    </div>
+    <p>The number of results is {{ studentData.length }}</p>
+  </div>
+
+
 </template>
 
 <script lang="ts">
@@ -25,7 +44,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-/*
 //Most code goes here
 import { onMounted, ref } from 'vue';
 //import type {StudentApiInterface} from './ApiInterfaces.ts';
@@ -49,7 +67,6 @@ onMounted(async () => {
     studentData.value = studentAPI.data
   }
 })
- */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
