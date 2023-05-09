@@ -18,19 +18,21 @@ server.get('/archetypes', async (request, reply) => {
 //for the parameter
 interface requestArchetype extends RequestGenericInterface {
     Params: {
-        archetypeTitle: string
+        title: string,
+        xpCost: string,
+
     }
 }
 //Now in the .get make sure you stereotype the request <requestId> and
 //then you can get the parameter like in the second line with const
 //thus /student/123 will pull 123 out of the constant
-server.get<requestArchetype>('/archetypes/:archetype', async (request, reply) => {
-    const { archetypeTitle } = request.params;
-    const archetype = MockData.find(element => element.archetypeTitle == archetypeTitle);
+server.get<requestArchetype>('/archetypes/:title', async (request, reply) => {
+    const { title } = request.params;
+    const archetype = MockData.find(element => element.archetypeTitle == title);
     if (archetype) {
         return archetype;
     } else {
-        let errObj = {error: `The archetype with title: ${archetypeTitle} was not found`};
+        let errObj = {error: `No archetype with title: ${title} was found`};
         reply.code(404).send(errObj);
         return
     }
@@ -41,30 +43,42 @@ server.get<requestArchetype>('/archetypes/:archetype', async (request, reply) =>
 //for the parameter
 interface requestQry extends RequestGenericInterface {
     Querystring: {
-        archetypeTitle: string,
+        title: string,
+        species: string
     }
 }
+
 //Now in the .get make sure you stereotype the request <requestId> and
 //then you can get the parameter like in the second line with const
 //thus /student/123 will pull 123 out of the constant
 server.get<requestQry>('/search', async (request, reply) => {
-    const { archetypeTitle } = request.query;
+    const { title, species } = request.query;
 
-    if (archetypeTitle){
-        const archetype = MockData.find(element => element.archetypeTitle == archetypeTitle);
+    if (title){
+        const archetype = MockData.find(element => element.archetypeTitle == title);
         if (archetype) {
             return [archetype];
         } else {
-            let errObj = {error: `The archetype with title: ${archetypeTitle} was not found`};
+            let errObj = {error: `The Archetype with student title: ${title} was not found`};
             reply.code(404).send(errObj);
             return
         }
-    } else {
-        let errObj = {error: "The /search API requires an archetype title"};
+    } else if (species){
+        const archetypes = MockData.filter(element => element.archetypeSpecies == species);
+        if (archetypes.length > 0) {
+            return archetypes;
+        } else {
+            let errObj = {error: `No Archetype with species type: ${species} was found`};
+            reply.code(404).send(errObj);
+            return
+        }
+    }else {
+        let errObj = {error: "The /search API requires an id or course query parameter"};
         reply.code(400).send(errObj);
         return
     }
-})
+  })
+
 
 server.listen({ port: 9500 }, (err, address) => {
     if (err) {

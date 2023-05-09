@@ -1,14 +1,12 @@
-export interface StudentApiInterface {
-    studentId: string,
-    studentName: string,
-    courseId: string
-}
-
 export interface TierOneArchetypes {
     archetypeTitle: string,
     archetypeSpecies: string,
     experiencePointCost: string,
-    keywords: string
+    keywords: string,
+    skills: string,
+    attributes: string,
+    ability: string,
+    wargear: string
 }
 
 export interface ApiErrorInterface {

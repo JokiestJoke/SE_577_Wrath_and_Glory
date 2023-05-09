@@ -7,6 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
 
   <header>
+
+    <div id="logoContainer">
+      <img id="logo" src="./assets/WrathAndGloryLogo.jpg" alt="Wrath and Glory Logo" width="400" height="250">
+    </div>
+
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/aboutGilead">About Gilead</RouterLink>
@@ -14,15 +19,17 @@ import { RouterLink, RouterView } from 'vue-router'
     </nav>
     <hr/>
   </header>
-
   <RouterView />
 
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {

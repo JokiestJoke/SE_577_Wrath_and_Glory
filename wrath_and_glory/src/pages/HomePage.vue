@@ -26,37 +26,6 @@ export default {
 
 <script setup lang="ts">
 //Most code goes here
-import { onMounted, ref } from 'vue';
-import type {StudentApiInterface} from './ApiInterfaces';
-//import type {TierOneArchetypes} from "./ApiInterfaces";
-import axios from 'axios';
-
-//Most code goes here
-let studentData = ref<StudentApiInterface[]>([])
-
-//let tierOneArchetypeData = ref<TierOneArchetypes[]>([])
-
-onMounted(async () => {
-  console.log("Page 1 mounted")
-
-  //this is where to go and get the student data
-  //let allStudentsURI = 'http://localhost:9500/students'
-
-  //let tierOneArchetypeURI = 'http://localhost:9600/archetypes'
-
-  //Use axios to load the student data - readup on await to make
-  //async calls easier
-  //let studentAPI = await axios.get<StudentApiInterface[]>(allStudentsURI)
-
-  //let archetypeAPI = await axios.get<TierOneArchetypes[]>(tierOneArchetypeURI);
-
-  //if OK, set the studentData variable, so that we can render in the ui
-  /*
-  if(studentAPI.status == 200){
-    studentData.value = studentAPI.data
-  }
-   */
-})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

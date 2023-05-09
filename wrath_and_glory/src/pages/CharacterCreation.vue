@@ -1,7 +1,13 @@
 <template>
-  <p> This is the character creation page</p>
+  <div>
+    <div>
+      <p> This is the character creation page. Here you can choose
+        between all "Tier One" Wrath and Glory Archetypes!</p>
+    </div>
+  </div>
 
   <div v-if="tierOneArchetypeData.length > 0">
+
     <div>
       <table>
         <tr>
@@ -9,6 +15,9 @@
           <th>Species</th>
           <th>XP-Cost</th>
           <th>Keywords</th>
+          <th>Attributes</th>
+          <th>Skills</th>
+          <th>Archetype Ability</th>
         </tr>
 
         <tr v-for = "( archetype ) in tierOneArchetypeData">
@@ -16,6 +25,9 @@
           <td>{{ archetype.archetypeSpecies }}</td>
           <td>{{ archetype.experiencePointCost }}</td>
           <td>{{ archetype.keywords }}</td>
+          <td>{{ archetype.attributes }}</td>
+          <td>{{ archetype.skills }}</td>
+          <td>{{ archetype.ability }}</td>
         </tr>
 
       </table>
