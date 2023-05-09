@@ -8,11 +8,7 @@ export interface TierOneArchetypes {
     archetypeTitle: string,
     archetypeSpecies: string,
     experiencePointsCost: string,
-    keywords: string,
-    attributes: string,
-    skills: string,
-    ability: string,
-    wargear: string
+    keywords: string
 }
 
 export interface ApiErrorInterface {

@@ -1,8 +1,19 @@
 <template>
   <p> This is the character creation page</p>
 
+  <div>
+    <div>
+      <table>
+        <tr>
+          <th>Archetype Title</th>
+          <th>Species</th>
+          <th>XP Cost</th>
+          <th>Keywords</th>
+        </tr>
 
-
+      </table>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">

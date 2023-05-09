@@ -10,27 +10,27 @@ server.register(cors, {
     origin: "*"
 })
 
-server.get('/students', async (request, reply) => {
+server.get('/archetypes', async (request, reply) => {
     return MockData;
 })
 
 //If you want to pass a parameter like /student/123 setup an interface
 //for the parameter
-interface requestId extends RequestGenericInterface {
+interface requestArchetype extends RequestGenericInterface {
     Params: {
-        id: string
+        archetypeTitle: string
     }
 }
 //Now in the .get make sure you stereotype the request <requestId> and
 //then you can get the parameter like in the second line with const
 //thus /student/123 will pull 123 out of the constant
-server.get<requestId>('/students/:id', async (request, reply) => {
-    const { id } = request.params;
-    const student = MockData.find(element => element.studentId == id);
-    if (student) {
-        return student;
+server.get<requestArchetype>('/archetypes/:archetype', async (request, reply) => {
+    const { archetypeTitle } = request.params;
+    const archetype = MockData.find(element => element.archetypeTitle == archetypeTitle);
+    if (archetype) {
+        return archetype;
     } else {
-        let errObj = {error: `The student with student id = ${id} was not found`};
+        let errObj = {error: `The archetype with title: ${archetypeTitle} was not found`};
         reply.code(404).send(errObj);
         return
     }
@@ -41,36 +41,26 @@ server.get<requestId>('/students/:id', async (request, reply) => {
 //for the parameter
 interface requestQry extends RequestGenericInterface {
     Querystring: {
-        id: string,
-        course: string
+        archetypeTitle: string,
     }
 }
 //Now in the .get make sure you stereotype the request <requestId> and
 //then you can get the parameter like in the second line with const
 //thus /student/123 will pull 123 out of the constant
 server.get<requestQry>('/search', async (request, reply) => {
-    const { id,course } = request.query;
+    const { archetypeTitle } = request.query;
 
-    if (id){
-        const student = MockData.find(element => element.studentId == id);
-        if (student) {
-            return [student];
+    if (archetypeTitle){
+        const archetype = MockData.find(element => element.archetypeTitle == archetypeTitle);
+        if (archetype) {
+            return [archetype];
         } else {
-            let errObj = {error: `The student with student id = ${id} was not found`};
+            let errObj = {error: `The archetype with title: ${archetypeTitle} was not found`};
             reply.code(404).send(errObj);
             return
         }
-    }else if (course){
-        const students = MockData.filter(element => element.courseId == course);
-        if (students.length > 0) {
-            return students;
-        } else {
-            let errObj = {error: `The no students were found with course id = ${course} was not found`};
-            reply.code(404).send(errObj);
-            return
-        }
-    }else {
-        let errObj = {error: "The /search API requires an id or course query parameter"};
+    } else {
+        let errObj = {error: "The /search API requires an archetype title"};
         reply.code(400).send(errObj);
         return
     }
