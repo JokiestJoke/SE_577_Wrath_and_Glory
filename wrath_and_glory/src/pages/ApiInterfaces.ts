@@ -7,7 +7,7 @@ export interface StudentApiInterface {
 export interface TierOneArchetypes {
     archetypeTitle: string,
     archetypeSpecies: string,
-    experiencePointsCost: string,
+    experiencePointCost: string,
     keywords: string
 }
 

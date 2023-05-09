@@ -1,14 +1,21 @@
 <template>
   <p> This is the character creation page</p>
 
-  <div>
+  <div v-if="tierOneArchetypeData.length > 0">
     <div>
       <table>
         <tr>
-          <th>Archetype Title</th>
+          <th>Archetype</th>
           <th>Species</th>
-          <th>XP Cost</th>
+          <th>XP-Cost</th>
           <th>Keywords</th>
+        </tr>
+
+        <tr v-for = "( archetype ) in tierOneArchetypeData">
+          <td>{{ archetype.archetypeTitle }}</td>
+          <td>{{ archetype.archetypeSpecies }}</td>
+          <td>{{ archetype.experiencePointCost }}</td>
+          <td>{{ archetype.keywords }}</td>
         </tr>
 
       </table>
