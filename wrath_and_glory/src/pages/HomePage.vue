@@ -5,7 +5,6 @@
       <i>
         Free Character Builder Tool!
       </i>
-
     </b3>
 
     <p>
