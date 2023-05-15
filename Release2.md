@@ -1,13 +1,17 @@
 Web App Instructions:
 
 Step 1) navigate to the /wrath_and_glory directory, and type "npm install" into the terminal
+
 Step 2) type "npm run dev" into the console to start the web application
+
 Step 3) Open a browser to the local host prompted by the console.
 
 Server Instructions:
 
 Step 1) navigate to the /server directory and type "npm install"
+
 Step 2) in the same directory type "npm run server"
+
 Step 3) Open a browser to the local host prompted by the console.
 
 Overall Instructions:
