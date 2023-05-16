@@ -1,9 +1,25 @@
 import  {MockData}  from "./db";
 import fastify, {RequestGenericInterface} from "fastify";
+import fastifyHttpProxy from "@fastify/http-proxy";
+import dotenv from 'dotenv';
+
+import {GetGHProxySecureOptions, GetGHProxyOptions } from "./proxy";
+
 import cors from '@fastify/cors';
 
+//DotEnv Config
+dotenv.config();
 
+//creating server
 const server = fastify()
+
+//setting up ProxyOptsSecure
+let proxyOptsSecure = GetGHProxySecureOptions(process.env.GH_ACCESS_TOKEN);
+server.register(fastifyHttpProxy, proxyOptsSecure);
+
+//setting up ProxyOptions
+let proxyOpts = GetGHProxyOptions();
+server.register(fastifyHttpProxy, proxyOpts);
 
 //setup CORS - this will be necessary for API requests from a VUE or any SPA app
 server.register(cors, {
@@ -23,9 +39,9 @@ interface requestArchetype extends RequestGenericInterface {
 
     }
 }
-//Now in the .get make sure you stereotype the request <requestId> and
+//Now in the .get make sure you stereotype the request <title> and
 //then you can get the parameter like in the second line with const
-//thus /student/123 will pull 123 out of the constant
+//thus /archetypes/title will pull title out of the constant
 server.get<requestArchetype>('/archetypes/:title', async (request, reply) => {
     const { title } = request.params;
     const archetype = MockData.find(element => element.archetypeTitle == title);
