@@ -6,20 +6,22 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
 
-  <header>
+  <div id="logoContainer">
+    <img id="logo" src="./assets/WrathAndGloryLogo.jpg" alt="Wrath and Glory Logo" width="400" height="250">
+  </div>
 
-    <div id="logoContainer">
-      <img id="logo" src="./assets/WrathAndGloryLogo.jpg" alt="Wrath and Glory Logo" width="400" height="250">
-    </div>
-
+  <div>
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/aboutGilead">About Gilead</RouterLink>
       <RouterLink to="/characterCreation">Character Creation</RouterLink>
     </nav>
     <hr/>
-  </header>
-  <RouterView />
+  </div>
+
+  <div>
+    <RouterView />
+  </div>
 
 </template>
 

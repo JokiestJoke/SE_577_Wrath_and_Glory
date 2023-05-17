@@ -66,7 +66,7 @@ interface requestQry extends RequestGenericInterface {
 
 //Now in the .get make sure you stereotype the request <requestId> and
 //then you can get the parameter like in the second line with const
-//thus /student/123 will pull 123 out of the constant
+//thus /student/title will pull title out of the constant
 server.get<requestQry>('/search', async (request, reply) => {
     const { title, species } = request.query;
 
