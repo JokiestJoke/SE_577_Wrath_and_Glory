@@ -1,4 +1,4 @@
-<template>
+<!----><template>
   <div>
     <div>
       <p> This is the character creation page. Here you can choose
@@ -11,9 +11,9 @@
     <div>
       <table>
         <tr>
-          <th>Archetype</th>
+          <th>Title</th>
           <th>Species</th>
-          <th>XP-Cost</th>
+          <th>XP</th>
           <th>Keywords</th>
           <th>Attributes</th>
           <th>Skills</th>
@@ -66,4 +66,8 @@ onMounted(async () => {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+
+
+
+</style>
