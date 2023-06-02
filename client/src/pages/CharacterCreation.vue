@@ -28,31 +28,55 @@
           <td>{{ archetype.attributes }}</td>
           <td>{{ archetype.skills }}</td>
           <td>{{ archetype.ability }}</td>
+
+          <SelectArchetypeButton :character="archetype.archetypeTitle" :onClick="archetypeSelectClick"></SelectArchetypeButton>
+
         </tr>
 
       </table>
     </div>
   </div>
+
+  <div>
+    HELLO
+  </div>
+
+
 </template>
 
 <script lang="ts">
 export default {
   name: 'CharacterCreationPage',
+  component: SelectArchetypeButton,
+  methods: {
+    archetypeSelectClick(){
+      alert("Clicked!")
+    }
+  }
 };
 </script>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import type {TierOneArchetypes} from './ApiInterfaces';
+import SelectArchetypeButton from '../components/SelectArchetypeButton.vue';
 import axios from 'axios';
 
 //Most code goes here
+
+
 let tierOneArchetypeData = ref<TierOneArchetypes[]>([])
+
+
+let buttonTitle = ' Button';
+let inquisitorTitle = 'Inquisitor ';
+
 
 onMounted(async () => {
   console.log("Character Creation mounted")
 
   let tierOneArchetypeURI = 'http://localhost:9500/archetypes'
+
 
   //Use axios to load the student data - readup on await to make
   //async calls easier
@@ -67,6 +91,11 @@ onMounted(async () => {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+  td {
+    padding: 1em;
+  }
+
 
 
 
