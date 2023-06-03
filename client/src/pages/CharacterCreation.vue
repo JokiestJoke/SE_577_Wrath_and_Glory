@@ -37,8 +37,28 @@
     </div>
   </div>
 
-  <div class="CharacterSheet">
-    HELLO
+  <div id="CharacterSheet">
+    <table id="CharacterInformationTable">
+      <tr>
+        <th id="CharacterInformation">Character Name</th>
+        <th id="CharacterInformation">Species</th>
+        <th id="CharacterInformation">Archetype Title</th>
+        <th id="CharacterInformation">Faction</th>
+        <th id="CharacterInformation">Keywords</th>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="characterName">CharacterName: </label>
+          <input type="text" id="characterName" name="characterName">
+        </td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+
+    </table>
   </div>
 
 
@@ -50,7 +70,9 @@ export default {
   component: SelectArchetypeButton,
   methods: {
     archetypeSelectClick(){
-      alert("Clicked!")
+      document.getElementById("CharacterSheet").style.visibility = "visible";
+      //chosenArchetypeData =
+
     }
   }
 };
@@ -63,14 +85,11 @@ import SelectArchetypeButton from '../components/SelectArchetypeButton.vue';
 import axios from 'axios';
 
 //Most code goes here
-
-
 let tierOneArchetypeData = ref<TierOneArchetypes[]>([])
-
+let chosenArchetype = null;
 
 let buttonTitle = ' Button';
 let inquisitorTitle = 'Inquisitor ';
-
 
 onMounted(async () => {
   console.log("Character Creation mounted")
@@ -92,7 +111,15 @@ onMounted(async () => {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-  td {
+table, th, td {
+  border:1px solid whitesmoke;
+}
+
+  #CharacterSheet{
+    visibility: hidden;
+  }
+
+  td, th {
     padding: 1em;
   }
 
