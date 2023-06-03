@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="CharacterSheet">
     HELLO
   </div>
 
