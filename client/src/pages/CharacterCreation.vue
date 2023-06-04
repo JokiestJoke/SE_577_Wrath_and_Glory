@@ -61,7 +61,7 @@
 
     </div>
 
-    <div id="CharacterInformationTableOne">
+    <div id="characterInformationTable">
       <br>
       <label>Starting Archetype Information</label>
       <table>
@@ -72,6 +72,7 @@
           <th>Faction</th>
           <th>Keywords</th>
           <th>XP-Cost</th>
+          <th>Archetype Ability</th>
         </tr>
 
         <tr>
@@ -84,11 +85,12 @@
           <td id="playerFaction"></td>
           <td id="playerKeywords"></td>
           <th id="xpCost"></th>
+          <th id="archetypeAbility"></th>
         </tr>
       </table>
     </div>
 
-    <div id="CharacterInformationTableTwo">
+    <div id="attributeRatingsTable">
       <br>
       <label>Attribute Ratings:</label>
       <table>
@@ -114,6 +116,64 @@
       </table>
     </div>
 
+    <div id="skillRatingsTableOne">
+      <br>
+      <label>Skill Ratings:</label>
+      <table>
+        <tr>
+          <td id="athleticsLabel">Athletics</td>
+          <td id="awarenessLabel">Awareness</td>
+          <td id="ballisticLabel">Ballistic Skill</td>
+          <td id="cunningLabel">Cunning</td>
+          <td id="deceptionLabel">Deception</td>
+          <td id="insightLabel">Insight</td>
+          <td id="intimidationLabel">Intimidation</td>
+          <td id="investigationLabel">Investigation</td>
+          <td id="leadershipLabel">Leadership</td>
+        </tr>
+
+        <tr>
+          <td id="athletics"></td>
+          <td id="awareness"></td>
+          <td id="ballistic"></td>
+          <td id="cunning"></td>
+          <td id="deception"></td>
+          <td id="insight"></td>
+          <td id="intimidation"></td>
+          <td id="investigation"></td>
+          <td id="leadership"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="skillRatingsTableTwo">
+      <table>
+        <tr>
+          <td id="medicaeLabel">Medicae</td>
+          <td id="persuasionLabel">Persuasion</td>
+          <td id="pilotLabel">Pilot</td>
+          <td id="psychicLabel">Psychic</td>
+          <td id="scholarLabel">Scholar</td>
+          <td id="stealthLabel">Stealth</td>
+          <td id="survivalLabel">Survival</td>
+          <td id="techLabel">Tech</td>
+          <td id="weaponLabel">Weapon Skill</td>
+        </tr>
+
+        <tr>
+          <td id="medicae"></td>
+          <td id="persuasion"></td>
+          <td id="pilot"></td>
+          <td id="psychic"></td>
+          <td id="scholar"></td>
+          <td id="stealth"></td>
+          <td id="survival"></td>
+          <td id="tech"></td>
+          <td id="weapon"></td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 
 
@@ -130,13 +190,15 @@ export default {
     selectArchetype(archetypeData){
       let archetypeSelection = document.getElementById("archetypeList").value;
       const playerArchetype = MockData.find(element => element.archetypeTitle == archetypeSelection);
-      console.log(playerArchetype);
 
+      //general archetype data
       document.getElementById("playerSpecies").textContent = playerArchetype.archetypeSpecies;
       document.getElementById("playerArchetype").textContent = playerArchetype.archetypeTitle;
       document.getElementById("playerKeywords").textContent = playerArchetype.keywords;
       document.getElementById("xpCost").textContent = playerArchetype.experiencePointCost;
+      document.getElementById("archetypeAbility").textContent = playerArchetype.ability;
 
+      //attribute ratings
       document.getElementById("strength").textContent = playerArchetype.strength;
       document.getElementById("toughness").textContent = playerArchetype.toughness;
       document.getElementById("agility").textContent = playerArchetype.agility;
@@ -144,6 +206,28 @@ export default {
       document.getElementById("intellect").textContent = playerArchetype.intellect;
       document.getElementById("fellowship").textContent = playerArchetype.fellowship;
       document.getElementById("speed").textContent = playerArchetype.speed;
+
+      //skill ratings
+      document.getElementById("athletics").textContent = playerArchetype.athletics;
+      document.getElementById("awareness").textContent = playerArchetype.awareness;
+      document.getElementById("ballistic").textContent = playerArchetype.ballisticskill;
+      document.getElementById("cunning").textContent = playerArchetype.cunning;
+      document.getElementById("deception").textContent = playerArchetype.deception;
+      document.getElementById("insight").textContent = playerArchetype.insight;
+      document.getElementById("intimidation").textContent = playerArchetype.intimidation;
+      document.getElementById("investigation").textContent = playerArchetype.investigation;
+      document.getElementById("leadership").textContent = playerArchetype.leadership;
+
+      //skill ratings continued
+      document.getElementById("medicae").textContent = playerArchetype.medicae;
+      document.getElementById("persuasion").textContent = playerArchetype.persuasion;
+      document.getElementById("pilot").textContent = playerArchetype.pilot;
+      document.getElementById("psychic").textContent = playerArchetype.psychic;
+      document.getElementById("scholar").textContent = playerArchetype.scholar;
+      document.getElementById("stealth").textContent = playerArchetype.stealth;
+      document.getElementById("survival").textContent = playerArchetype.survival;
+      document.getElementById("tech").textContent = playerArchetype.tech;
+      document.getElementById("weapon").textContent = playerArchetype.weaponskill;
 
     }
   }
