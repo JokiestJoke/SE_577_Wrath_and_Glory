@@ -3,8 +3,15 @@ export interface TierOneArchetypes {
     archetypeSpecies: string,
     experiencePointCost: string,
     keywords: string,
-    skills: string,
     attributes: string,
+    skills: string,
+    strength: string,
+    toughness: string,
+    agility: string,
+    willpower: string,
+    intellect: string,
+    fellowship: string,
+    speed: string,
     ability: string,
     wargear: string
 }
