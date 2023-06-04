@@ -284,3 +284,52 @@ export const MockData = [
         wargear: "Shoota, Slugga, Choppa, Ripped clothes"
     }
 ];
+
+export const WrathAndGloryNames = [
+    {
+        name: "Barylnda Ovion",
+        gender: "Male",
+        species: "Human"
+    },
+    {
+        name: "Raiviel al-Solulli",
+        gender: "Male",
+        species: "Human"
+    },
+    {
+        name: "Catiel Shahaf",
+        gender: "Male",
+        species: "Human"
+    },
+    {
+        name: "Jawl Drusius",
+        gender: "Male",
+        species: "Human"
+    },
+    {
+        name: "Livia Junta",
+        gender: "Male",
+        species: "Human"
+    },
+    {
+        name: "Livia Junta",
+        gender: "Female",
+        species: "Human"
+    },
+    {
+        name: "Vesqa Fontius",
+        gender: "Female",
+        species: "Human"
+    },
+    {
+        name: "Drucilla Habsburgus",
+        gender: "Female",
+        species: "Human"
+    },
+
+
+
+
+
+
+];
