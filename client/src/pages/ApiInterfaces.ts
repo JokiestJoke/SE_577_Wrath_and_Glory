@@ -34,6 +34,12 @@ export interface TierOneArchetypes {
     wargear: string
 }
 
+export interface WrathAndGloryNames {
+    name: string,
+    gender: string,
+    species: string
+}
+
 export interface ApiErrorInterface {
     isError: boolean,
     errorCode: number,

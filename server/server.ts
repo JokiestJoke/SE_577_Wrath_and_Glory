@@ -1,4 +1,5 @@
 import  {MockData}  from "./db";
+import {WrathAndGloryNames} from "./db";
 import fastify, {RequestGenericInterface} from "fastify";
 import fastifyHttpProxy from "@fastify/http-proxy";
 import dotenv from 'dotenv';
@@ -28,6 +29,10 @@ server.register(cors, {
 
 server.get('/archetypes', async (request, reply) => {
     return MockData;
+})
+
+server.get('/names', async (request, reply) => {
+    return WrathAndGloryNames;
 })
 
 //If you want to pass a parameter like /student/123 setup an interface

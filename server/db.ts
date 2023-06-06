@@ -307,7 +307,7 @@ export const WrathAndGloryNames = [
         species: "Human"
     },
     {
-        name: "Livia Junta",
+        name: "Drusus Crest",
         gender: "Male",
         species: "Human"
     },
@@ -326,8 +326,66 @@ export const WrathAndGloryNames = [
         gender: "Female",
         species: "Human"
     },
-
-
+    {
+        name: "Anna Ludvilla",
+        gender: "Female",
+        species: "Human"
+    },
+    {
+        name: "Linnette Howlette",
+        gender: "Female",
+        species: "Human"
+    },
+    {
+        name: "Grod Skull-Taka",
+        gender: "Male",
+        species: "Ork"
+    },
+    {
+        name: "Krum Ship-Smasha",
+        gender: "Male",
+        species: "Ork"
+    },
+    {
+        name: "Heke Ded-Eye",
+        gender: "Male",
+        species: "Ork"
+    },
+    {
+        name: "Heke Ded-Eye",
+        gender: "Male",
+        species: "Ork"
+    },
+    {
+        name: "Terk Big-un",
+        gender: "Male",
+        species: "Ork"
+    },
+    {
+        name: "Abarak Aldain",
+        gender: "Male",
+        species: "Aeldari"
+    },
+    {
+        name: "Danaesh Starhand",
+        gender: "Male",
+        species: "Aeldari"
+    },
+    {
+        name: "Ebahan Luaman",
+        gender: "Male",
+        species: "Aeldari"
+    },
+    {
+        name: "Dollenhal Bechareth",
+        gender: "Male",
+        species: "Aeldari"
+    },
+    {
+        name: "Eldanesh Kalaea",
+        gender: "Male",
+        species: "Aeldari"
+    },
 
 
 
