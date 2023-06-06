@@ -63,8 +63,9 @@
 
       <BasicButton :message="chooseArchetypeButtonMessage" :onClick="selectArchetype" ></BasicButton>
     </div >
+  </div>
 
-    <div id="CharacterInformationTable">
+  <div id="CharacterInformationTable">
       <br>
       <label>Starting Archetype Information</label>
       <table>
@@ -118,7 +119,7 @@
           </div>
         </tr>
       </table>
-    </div>
+  </div>
 
     <div>
       <br>
@@ -224,7 +225,6 @@
       </table>
     </div>
 
-  </div>
 
 
 </template>
@@ -245,18 +245,19 @@ export default {
     },
     selectArchetype(){
       let archetypeSelection = document.getElementById("archetypeList").value;
-      console.log("Selection: " + archetypeSelection)
 
+      console.log("Selection: " + archetypeSelection)
       let genderSelection = document.getElementById("genderList").value;
 
-      const playerArchetype = MockData.find(element => element.archetypeTitle == archetypeSelection);
-
-      this.playerSpecies = playerArchetype.archetypeSpecies.toUpperCase();
+      if (archetypeSelection === "Ork Boy"){
+        this.playerSpecies = "ORK";
+      } else if(archetypeSelection === "Corsair") {
+        this.playerSpecies = "AELDARI";
+      } else {
+        this.playerSpecies = "HUMAN";
+      }
       this.playerGender = genderSelection;
       this.playerArchetype = archetypeSelection;
-
-      console.log("Archetype: " + this.playerArchetype);
-      console.log("Species:" + this.playerSpecies);
     }
   },
   data() {
@@ -274,7 +275,6 @@ export default {
 import { onMounted, ref } from 'vue';
 import type {TierOneArchetypes} from './ApiInterfaces';
 import type {WrathAndGloryNames} from './ApiInterfaces';
-import  {MockData}  from "../../../server/db.ts";
 import BasicButton from '../components/BasicButton.vue'
 import axios from 'axios';
 
