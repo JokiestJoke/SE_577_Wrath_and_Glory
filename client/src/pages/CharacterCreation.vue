@@ -246,7 +246,7 @@ export default {
     selectArchetype(){
       let archetypeSelection = document.getElementById("archetypeList").value;
 
-      console.log("Selection: " + archetypeSelection)
+
       let genderSelection = document.getElementById("genderList").value;
 
       if (archetypeSelection === "Ork Boy"){
